@@ -1,0 +1,97 @@
+/* Import Materialize base styles */
+@import "https://cdnjs.cloudflare.com/ajax/libs/materialize-css/10.0.2/css/materialize.min.css";
+
+/* Base styles */
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f4f8; /* One UI light background */
+}
+
+/* Header section (using Materialize with enhancements) */
+.header {
+  background-color: #e0e0e0; /* Lighter header background */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header h1 {
+  font-size: 24px;
+  font-weight: 500; /* One UI text weight */
+  color: #212121; /* One UI text color */
+  margin: 0; /* Remove default margin */
+}
+
+.menu-icon {
+  font-size: 28px;
+  color: #212121; /* One UI text color */
+  cursor: pointer;
+}
+
+/* Navigation drawer (using Materialize sidenav) */
+.sidenav {
+  width: 250px; /* Adjust width as needed */
+  background-color: #f4f4f4; /* Drawer background */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.sidenav a {
+  color: #212121; /* One UI text color */
+  text-decoration: none; /* Remove default underline */
+  padding: 16px; /* Adjust padding for menu items */
+}
+
+.sidenav a:hover {
+  background-color: #e0e0e0; /* Subtle background on hover */
+}
+
+/* Launcher grid styling */
+.launcher-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px;
+}
+
+.app-card {
+  width: calc(33% - 20px); /* Adjust based on desired columns */
+  margin: 10px;
+  padding: 15px;
+  border-radius: 15px; /* Rounded corners */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  transition: all 0.2s ease-in-out; /* Smooth hover effect */
+  background-color: #fff; /* Card background */
+  cursor: pointer; /* Enable pointer for hover effect */
+}
+
+.app-card:hover {
+  transform: translateY(-2px); /* Slight lift on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
+}
+
+/* Card content styling */
+.app-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%; /* Circular icon shape */
+  background-color: #e0e0e0; /* Placeholder background */
+}
+
+.app-card:hover .app-icon {
+  background-color: #e8e8e8; /* Slightly lighter background on hover */
+}
+
+.app-title {
+  font-weight: 500; /* One UI text weight */
+  color: #212121; /* One UI text color */
+  text-align: center;
+  margin-bottom: 5px; /* Add some space between icon and title */
+}
