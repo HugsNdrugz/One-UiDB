@@ -1,18 +1,19 @@
 /* Import Materialize base styles */
 @import "https://cdnjs.cloudflare.com/ajax/libs/materialize-css/10.0.2/css/materialize.min.css";
 
-/* Base styles */
+/* Base Styles (One UI inspired) */
 body {
-  font-family: sans-serif;
+  font-family: Roboto, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f0f4f8; /* One UI light background */
+  background-color: #FAFAFA;
+  color: #212121;
 }
 
-/* Header section (using Materialize with enhancements) */
+/* Header Section */
 .header {
-  background-color: #e0e0e0; /* Lighter header background */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  background-color: #FFFFFF;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   padding: 16px;
   display: flex;
   justify-content: space-between;
@@ -20,36 +21,34 @@ body {
 }
 
 .header h1 {
-  font-size: 24px;
-  font-weight: 500; /* One UI text weight */
-  color: #212121; /* One UI text color */
-  margin: 0; /* Remove default margin */
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin: 0;
 }
 
-.menu-icon {
-  font-size: 28px;
-  color: #212121; /* One UI text color */
-  cursor: pointer;
+.sidenav-trigger {
+  display: none;
+  color: #212121;
+  font-size: 2rem;
 }
 
-/* Navigation drawer (using Materialize sidenav) */
+/* Navigation Drawer (Materialize Sidenav) */
 .sidenav {
-  width: 250px; /* Adjust width as needed */
-  background-color: #f4f4f4; /* Drawer background */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  background-color: #FFFFFF;
+  width: 250px;
 }
 
 .sidenav a {
-  color: #212121; /* One UI text color */
-  text-decoration: none; /* Remove default underline */
-  padding: 16px; /* Adjust padding for menu items */
+  color: #212121;
+  text-decoration: none;
+  padding: 16px;
 }
 
 .sidenav a:hover {
-  background-color: #e0e0e0; /* Subtle background on hover */
+  background-color: #EEEEEE;
 }
 
-/* Launcher grid styling */
+/* Launcher Grid (Responsive) */
 .launcher-grid {
   display: flex;
   flex-wrap: wrap;
@@ -58,22 +57,21 @@ body {
 }
 
 .app-card {
-  width: calc(33% - 20px); /* Adjust based on desired columns */
+  width: 100%;
   margin: 10px;
-  padding: 15px;
-  border-radius: 15px; /* Rounded corners */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  transition: all 0.2s ease-in-out; /* Smooth hover effect */
-  background-color: #fff; /* Card background */
-  cursor: pointer; /* Enable pointer for hover effect */
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  background-color: #FFFFFF;
+  transition: box-shadow 0.3s ease;
+  cursor: pointer;
 }
 
 .app-card:hover {
-  transform: translateY(-2px); /* Slight lift on hover */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }
 
-/* Card content styling */
+/* App Card Content */
 .app-icon {
   display: flex;
   justify-content: center;
@@ -81,17 +79,23 @@ body {
   margin-bottom: 10px;
   height: 60px;
   width: 60px;
-  border-radius: 50%; /* Circular icon shape */
-  background-color: #e0e0e0; /* Placeholder background */
-}
-
-.app-card:hover .app-icon {
-  background-color: #e8e8e8; /* Slightly lighter background on hover */
+  border-radius: 50%;
+  background-color: #EEEEEE;
 }
 
 .app-title {
-  font-weight: 500; /* One UI text weight */
-  color: #212121; /* One UI text color */
+  font-size: 1rem;
+  font-weight: 500;
+  color: #212121;
   text-align: center;
-  margin-bottom: 5px; /* Add some space between icon and title */
+}
+
+/* Media Queries for Responsiveness */
+@media (min-width: 600px) {
+  .sidenav-trigger { display: block; }
+  .app-card { width: calc(50% - 20px); }
+}
+@media (min-width: 992px) {
+  .sidenav-trigger { display: none; }
+  .app-card { width: calc(33.333% - 20px); }
 }
