@@ -17,16 +17,18 @@
   <main id="app" class="container">
     <div id="app-drawer" class="sidenav"></div>
     <div class="row launcher-grid">
-      <div class="col s3 m2" v-for="app in apps" :key="app.name">
-        <a :href="urlForAppDetails(app.name)" class="card hoverable app-card">
+      {% for app in apps %}
+      <div class="col s3 m2">
+        <a href="{{ url_for('index') }}" class="card hoverable app-card">
           <div class="card-image">
-            <svg-icon :icon="app.icon"></svg-icon>
+            <i class="material-icons">{{ app.icon }}</i>
           </div>
           <div class="card-content center">
             <span class="card-title">{{ app.name }}</span>
           </div>
         </a>
       </div>
+      {% endfor %}
     </div>
   </main>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize-css/10.0.2/js/materialize.min.js"></script>
