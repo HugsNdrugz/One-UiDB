@@ -9,41 +9,39 @@ try:
         data = json.load(f)
 except FileNotFoundError:
     data = {
-        "messenger_data": [],
-        "call_data": [],
-        "sms_data": [],
-        "keylog_data": []
+        "conversations": [],
+        "call_logs": []
     }
     print("Warning: 'data/aggregated_data.json' not found. Using empty data.")
 
 @app.route('/')
 def index():
-    """Render the launcher application homepage"""
+    """Render the home launcher page"""
     apps = [
-        {"name": "Messenger", "icon": "chat"},
-        {"name": "Call", "icon": "phone"},
-        {"name": "SMS", "icon": "message"},
-        {"name": "Keylogs", "icon": "keyboard"},
+        {"name": "Messenger", "icon": "Messenger.png", "route": "messenger"},
+        {"name": "Call", "icon": "Phone.png", "route": "call"},
+        {"name": "SMS", "icon": "Messages.png", "route": "sms"},
+        {"name": "Keylogs", "icon": "Samsung Keyboard.png", "route": "keylogs"},
     ]
     return render_template('index.html', apps=apps)
 
 @app.route('/app/<name>')
 def app_details(name):
     """Render details for a specific app"""
-    if name == "Messenger":
-        messages = data.get('messenger_data', [])
-        return render_template('app_details.html', app_name=name, data=messages)
-    elif name == "Call":
-        calls = data.get('call_data', [])
-        return render_template('app_details.html', app_name=name, data=calls)
-    elif name == "SMS":
-        sms = data.get('sms_data', [])
-        return render_template('app_details.html', app_name=name, data=sms)
-    elif name == "Keylogs":
-        keylogs = data.get('keylog_data', [])
-        return render_template('app_details.html', app_name=name, data=keylogs)
+    if name == "messenger":
+        messages = data.get('conversations', [])
+        return render_template('app_details.html', app_name="Messenger", data=messages)
+    elif name == "call":
+        calls = data.get('call_logs', [])
+        return render_template('app_details.html', app_name="Call", data=calls)
+    elif name == "sms":
+        sms = data.get('sms', [])
+        return render_template('app_details.html', app_name="SMS", data=sms)
+    elif name == "keylogs":
+        keylogs = data.get('keylogs', [])
+        return render_template('app_details.html', app_name="Keylogs", data=keylogs)
     else:
-        return render_template('app_details.html', app_name=name, data=[])
+        return render_template('404.html'), 404
 
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0') 
+    app.run(debug=True, host='0.0.0.0')
