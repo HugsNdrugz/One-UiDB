@@ -1,1 +1,39 @@
- 
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+  <h1>{{ app_name }} Details</h1>
+  <div class="data-list">
+    {% if app_name == "Messenger" %}
+    {% for item in data %}
+    <div class="data-item">
+      <p><strong>{{ item.sender }}:</strong> {{ item.Text }}</p>
+      <p>{{ item.Time }}</p>
+    </div>
+    {% endfor %}
+    {% elif app_name == "Call" %}
+    {% for item in data %}
+    <div class="data-item">
+      <p><strong>{{ item.caller }}:</strong> {{ item.duration }}</p>
+      <p>{{ item.time }}</p>
+    </div>
+    {% endfor %}
+    {% elif app_name == "SMS" %}
+    {% for item in data %}
+    <div class="data-item">
+      <p><strong>{{ item.sender }}:</strong> {{ item.text }}</p>
+      <p>{{ item.time }}</p>
+    </div>
+    {% endfor %}
+    {% elif app_name == "Keylogs" %}
+    {% for item in data %}
+    <div class="data-item">
+      <p>{{ item.time }}: {{ item.keys }}</p>
+    </div>
+    {% endfor %}
+    {% else %}
+    <p>No data available for this application.</p>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}

@@ -7,7 +7,9 @@ const app = new Vue({
     apps: [
       { name: 'SMS', icon: 'message' },
       { name: 'Contacts', icon: 'account_box' },
-      // Add more apps with their corresponding icon names
+      { name: 'Messenger', icon: 'chat' },
+      { name: 'Call', icon: 'phone' },
+      { name: 'Keylogs', icon: 'keyboard' },
     ],
   },
   mounted() {

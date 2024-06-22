@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My Data Manager</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize-css/10.0.2/css/materialize.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize-css/1.0.0/css/materialize.min.css">
   <link rel="stylesheet" href="{{ url_for('static', filename='css/custom_styles.css') }}">
 </head>
 <body>
@@ -19,7 +19,7 @@
     <div class="row launcher-grid">
       {% for app in apps %}
       <div class="col s3 m2">
-        <a href="{{ url_for('index') }}" class="card hoverable app-card">
+        <a href="{{ url_for('app_details', name=app.name) }}" class="card hoverable app-card">
           <div class="card-image">
             <i class="material-icons">{{ app.icon }}</i>
           </div>
@@ -31,8 +31,8 @@
       {% endfor %}
     </div>
   </main>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize-css/10.0.2/js/materialize.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.8.3/anime.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize-css/1.0.0/js/materialize.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.min.js"></script>
   <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
