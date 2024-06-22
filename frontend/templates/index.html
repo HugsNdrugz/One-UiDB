@@ -4,34 +4,33 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My Data Manager</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize-css/1.0.0/css/materialize.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize-css/10.0.2/css/materialize.min.css">
   <link rel="stylesheet" href="{{ url_for('static', filename='css/custom_styles.css') }}">
 </head>
 <body>
   <header class="navbar-fixed">
     <nav class="nav-wrapper teal lighten-2">
       <a href="#" class="brand-logo center">My Data Manager</a>
+      <a href="#" data-target="app-drawer" class="sidenav-trigger right"><i class="material-icons">menu</i></a>
     </nav>
   </header>
-  <main class="container">
-    <h1>Apps</h1>
+  <main id="app" class="container">
+    <div id="app-drawer" class="sidenav"></div>
     <div class="row launcher-grid">
-      {% for app in apps %}
-      <div class="col s3 m2">
-        <a href="{{ url_for('app_details', name=app.route) }}" class="card hoverable app-card">
-          <div class="card-image center-align">
-            <img src="{{ url_for('static', filename='icons/' ~ app.icon) }}" alt="{{ app.name }} Icon" class="responsive-img app-icon">
+      <div class="col s6 m4" v-for="app in apps" :key="app.name">
+        <a :href="urlForAppDetails(app.name)" class="card hoverable app-card">
+          <div class="card-image">
+            <i class="material-icons">{{ app.icon }}</i>
           </div>
           <div class="card-content center">
             <span class="card-title">{{ app.name }}</span>
           </div>
         </a>
       </div>
-      {% endfor %}
     </div>
   </main>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize-css/1.0.0/js/materialize.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize-css/10.0.2/js/materialize.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.8.3/anime.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.min.js"></script>
   <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>

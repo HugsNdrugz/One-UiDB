@@ -1,5 +1,5 @@
 /* Import Materialize base styles */
-@import "https://cdnjs.cloudflare.com/ajax/libs/materialize-css/1.0.0/css/materialize.min.css";
+@import "https://cdnjs.cloudflare.com/ajax/libs/materialize-css/10.0.2/css/materialize.min.css";
 
 /* Base Styles (One UI inspired) */
 body {
@@ -27,7 +27,7 @@ body {
 }
 
 .sidenav-trigger {
-  display: none;
+  display: block;
   color: #212121;
   font-size: 2rem;
 }
@@ -61,24 +61,28 @@ body {
   margin: 10px;
   padding: 20px;
   border-radius: 12px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
   background-color: #FFFFFF;
   transition: box-shadow 0.3s ease;
   cursor: pointer;
 }
 
 .app-card:hover {
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
-}
-
-.app-icon {
-  width: 60px;
-  height: 60px;
-  margin: 0 auto;
-  display: block;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }
 
 /* App Card Content */
+.app-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  background-color: #EEEEEE;
+}
+
 .app-title {
   font-size: 1rem;
   font-weight: 500;
