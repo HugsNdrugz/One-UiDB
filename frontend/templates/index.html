@@ -14,10 +14,10 @@
       <a href="#" data-target="app-drawer" class="sidenav-trigger right"><i class="material-icons">menu</i></a>
     </nav>
   </header>
-  <main id="app" class="container">
+  <main id="app" class="container full-height">
     <div id="app-drawer" class="sidenav"></div>
     <div class="row launcher-grid">
-      <div class="col s6 m4" v-for="app in apps" :key="app.name">
+      <div class="col s6 m4 l2" v-for="app in apps" :key="app.name">
         <a :href="urlForAppDetails(app.name)" class="card hoverable app-card">
           <div class="card-image">
             <i class="material-icons">{{ app.icon }}</i>
